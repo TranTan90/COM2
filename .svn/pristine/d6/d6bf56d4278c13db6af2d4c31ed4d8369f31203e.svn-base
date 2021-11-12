@@ -1,0 +1,21 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="test.aspx.cs" Inherits="main_esd_test" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+      <asp:TextBox ID="key" runat="server" CssClass="input1" Width="100px" style="ime-mode:active"></asp:TextBox>
+             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="key" ErrorMessage="Phải nhập dữ liệu" ForeColor="#FF3300"></asp:RequiredFieldValidator>
+   <asp:Button ID="Button1" runat="server" Text="Submit" />
+    </div>
+         
+
+      
+    </form>
+</body>
+</html>

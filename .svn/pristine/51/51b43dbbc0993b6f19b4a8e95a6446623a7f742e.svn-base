@@ -1,0 +1,51 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="esdview.aspx.cs" Inherits="esdview" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#name1').css("display", "none");
+      //  var name2 = document.getElementById('name1');
+        var removeratt = function () {
+            $('#name1').prop("onclick", null);
+        }
+        var addcls = function () {
+            $('#name1').css("display", "block");
+        };
+        setTimeout(addcls, 3000);
+    });
+  
+</script>
+<body>
+    <form id="form1" runat="server" class="container">
+    <div>
+        <p style="text-align: center">
+            ĐIỀU KHOẢN Bảo Mật An Toàn Thông Tin</p>
+        <pre>
+        MỘt số chú ý khi đến nhà máy
+
+        </pre>
+    </div>
+    <footer style="display: block">
+       <div >
+         
+<asp:CheckBox ID="CheckBox1" runat="server" Text="Tôi Đồng ý với các quy định của công ty" 
+               oncheckedchanged="CheckBox1_CheckedChanged"></asp:CheckBox>
+<br />
+ <p style="color:Red">*Đọc xong nút Đồng ý điều khoản sẽ hiện ra</p>
+         <asp:Button   runat="server" ID="name1"  Text="Đồng Ý" onclick="name1_Click" style="float:right; margin-left:20px"  CssClass="btn btn-primary"/>
+         <asp:Button  runat="server"  Text="Back" onclick="Unnamed1_Click" CssClass="btn btn-primary" style="float:right"/>
+
+    </div>
+    </footer>
+    </form>
+</body>
+</html>

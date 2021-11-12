@@ -1,0 +1,55 @@
+$(document).ready(function () {
+    $('.langkr').hide();
+    $('#language').on('change', function () {
+        var getlang = $('#language').val();
+        if (getlang == 1) {
+            $('.langkr').hide();
+            $('.langvn').show();
+
+        }
+        else {
+            $('.langkr').show();
+            $('.langvn').hide();
+        }
+    });
+    window.onload = function () {
+        alert('Vui lòng nhập đầy đủ  vào các ô theo các từ gợi ý có sẵn / 사용 가능한 제안된 단어에 따라 모든 상자를 채우십시오.');};
+ 
+
+});
+function check(id1, number1) {
+    var listname = ["khẩn cấp", "phòng y tế", "vứt rác", "luôn đeo thẻ", "dán sticker", "không được phép", "không tự ý", "có giấy phép", "hút thuốc", "cấm uống rượu", "đồ bảo hộ"];
+    var listname1 = ["비상사태", "보건관리실", "버려주시", "방문증", "스티커 부착", "반입이 금지", "반출할 수 없습니다", "안전작업허가", "흡연구역", "음주를 금지합니다", "보호구"];
+
+    var x = document.getElementById(id1);
+
+    var z = x.value.toLowerCase();
+    if (z != '') {
+        var y = listname.includes(z);
+        if (y == true && z == listname[number1]) {
+            check2();
+        }
+        else {
+            alert("Nhập sai từ khóa / 잘못된 키워드를 입력하세요");
+        }
+    }
+    else {
+        alert('Không được để trống / 비워둘 수 없습니다');
+    }
+}
+function check2() {
+    var data = [];
+    for (var i = 3; i <= 13; i++) {
+        var a = document.getElementsByTagName('input')[i].value;
+        if (a != '') {
+            data.push(a);
+        }
+        if (data.length == 11) {
+            document.getElementById('name2').style.display = 'none';
+            document.getElementById('name1').style.display = 'block';
+        }
+        else {
+            document.getElementById('name1').style.display = 'none';
+        }
+    }
+}
